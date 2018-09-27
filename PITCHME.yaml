@@ -3,3 +3,4 @@ theme-override : assets/css/PITCHME.css
 #logo : assets/images/logo.png
 transition : none
 published : true
+mathjax : TeX-AMS_HTML-full
