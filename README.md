@@ -1,4 +1,4 @@
 ## RL COURSE
 
 ##### URL
-https://gitpitch.com/davsuacar/rl-course#/
+https://gitpitch.com/hypnosapos/rl-course#/
