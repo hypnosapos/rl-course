@@ -10,6 +10,14 @@ Markov Decision Process
 +++
 
 @snap
+Markov Property
+@snapend
+
+`\(P[s_{t+1}|s_t] = P[s_{t+1} | s_1, ..., s_t] \)`
+
++++
+
+@snap
 @ol[list-bullets-black](false)
 
 	- S is a finite set of states
@@ -19,16 +27,69 @@ Markov Decision Process
 	- `\(\gamma ∈ [0,1] \)` is the discount factor, which represents the difference in importance between future rewards and present rewards
 @olend
 @snapend
----
++++
+
+@snap
+Policy
+@snapend
+
+`\(π[a|s] = P[A_t = a | s_t = s] \)`
+
++++
+
+@snap[]
+![Policy](assets/images/policy.png)
+
+@snapend
++++
 
 @snap 
-State Value Function Vπ(s)
+State Value Function
 @snapend
+<br></br>
+@snap[] 
+
+`\(V_π(s)\)` expresses the expected value of following policy `\(π\)` forever when the agent starts following it from state `\(s\)`.
+
+@snapend
++++
+
+@snap[]
+![Value Function](assets/images/value.png)
+
+@snapend
+
+
++++
+@snap 
+Action Value Function
+@snapend
+<br></br>
+@snap[] 
+
+`\(Q_π(s, a)\)` expresses the expected value of first taking action `\(a\)` from state `\(s\)` and then following policy `\(π\)` forever.
+
+@snapend
+
++++
+
+
+
+@ol[list-bullets-black](false)
+- For any Markov Decision Process
+There exists an optimal policy `\(π_*\)` that is better than or equal
+to all other policies, `\(π_* ≥ π, ∀π\)` 
+- All optimal policies achieve the optimal value function, `\(v_{π_∗}(s) = v_∗(s)\)` 
+- All optimal policies achieve the optimal action-value function, `\(q_{π_∗}(s, a) = q_∗(s, a)\)`
+
+@olend
+
+---
 
 +++
 @snap[] 
 
-`\(Vπ(s)\)` expresses the expected value of following policy `\(π\)` forever when the agent starts following it from state `\(s\)`.
+`\(V_π(s)\)` expresses the expected value of following policy `\(π\)` forever when the agent starts following it from state `\(s\)`.
 
 @snapend
 
@@ -40,16 +101,7 @@ Ejemplo
 @snapend
 ---
 
-@snap 
-Action Value Function
-@snapend
-+++
 
-@snap[] 
-
-`\(Qπ(s, a)\)` expresses the expected value of first taking action `\(a\)` from state `\(s\)` and then following policy `\(π\)` forever.
-
-@snapend
 
 +++
 @snap[]
