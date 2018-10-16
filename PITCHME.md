@@ -4,7 +4,7 @@
 @snapend
 ---
 @snap
-Markov Decision Process
+Markov Decision Processes
 @snapend
 
 +++
