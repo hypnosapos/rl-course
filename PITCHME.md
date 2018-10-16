@@ -50,16 +50,17 @@ State Value Function
 @snap[] 
 
 `\(V_π(s)\)` expresses the expected value of following policy `\(π\)` forever when the agent starts following it from state `\(s\)`.
+<br></br>
+`\(V_π(s) = E_π[G_t | S_t = s] \)`
 
 @snapend
 +++
 
-@snap[]
+@snap
 ![Value Function](assets/images/value.png)
 
 @snapend
-
-
+ 
 +++
 @snap 
 Action Value Function
@@ -68,12 +69,24 @@ Action Value Function
 @snap[] 
 
 `\(Q_π(s, a)\)` expresses the expected value of first taking action `\(a\)` from state `\(s\)` and then following policy `\(π\)` forever.
+<br></br>
+`\(Q_π(s, a) = E_π[G_t | S_t = s, A_t = a] \)`
 
 @snapend
 
 +++
 
+@snap[north-west] 
+Bellman Expectation Equation
+<br></br>
+`\(Q_π(s, a) = E_π[R_{t+1} + \gamma q_π(S_{t+1}, A_{t+1}) | S_t = s, A_t = a] \)`
+<br></br>
 
+`\(V_π(s) = E_π[R_{t+1} + \gamma V_π(S_{t+1}) | S_t = s] \)`
+<br></br>
+
+@snapend
++++
 
 @ol[list-bullets-black](false)
 - For any Markov Decision Process
@@ -83,75 +96,83 @@ to all other policies, `\(π_* ≥ π, ∀π\)`
 - All optimal policies achieve the optimal action-value function, `\(q_{π_∗}(s, a) = q_∗(s, a)\)`
 
 @olend
-
 ---
 
-+++
-@snap[] 
-
-`\(V_π(s)\)` expresses the expected value of following policy `\(π\)` forever when the agent starts following it from state `\(s\)`.
-
+@snap 
+Model free VS Model based
 @snapend
 
 +++
-
-@snap[]
-Ejemplo
-
-@snapend
----
-
-
-
-+++
-@snap[]
-
-Ejemplo
-@snapend
-
-
----
-
-@snap[north-west] 
-Bellman Equation
-@snapend
----
-
 @snap[north-west] 
 Model free
 @snapend
----
+
+
+@ol[list-bullets-black](false)
+- Trial and error
+- Not require storage all combinations
+- Q-Learning => Estimate `\(Q(s, a)\)`
+- Policy search on policy space
+@olend
++++
 
 @snap[north-west] 
 Model Based
 @snapend
+
+@ol[list-bullets-black](false)
+- Learn the transition `\(T(s1 | s0, a)\)`
+- Become impractical `\((S * S * A)\)` tabular setup
+- Model learns how environment works => Plan solution using that model
+@olend
 ---
 
+
+@snap
+On-Policy VS Off-Policy
+@snapend
+
++++
 @snap[north-west] 
 On-Policy
 @snapend
----
+Estimate the value of a policy while using it for control
+
++++
 
 @snap[north-west] 
 Off-Policy
+
+
 @snapend
 ---
 
-@snap[north-west] 
+@snap 
 Policy Iteration
 @snapend
 ---
 
-@snap[north-west] 
+@snap 
 Value Iteration
 @snapend
 ---
 
-@snap[north-west] Q-Learning
+@snap
+Q-Learning
 @snapend
 ---
 
-@snap[north-west] 
+@snap 
 SARSA
+@snapend
+---
+
+@snap 
+DQN
+@snapend
+---
+
+@snap 
+DDPG
 @snapend
 ---
