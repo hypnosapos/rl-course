@@ -136,7 +136,7 @@ On-Policy VS Off-Policy
 @snap[north-west] 
 On-Policy
 @snapend
-Estimate the value of a policy while using it for control
+Estimate the value of a policy while using it for control. Agent learns the value based on its current action a derived from the current policy.
 
 +++
 
@@ -145,16 +145,36 @@ Off-Policy
 
 
 @snapend
+
+The agent learns a policy which (usually) evaluates the “value” of taking various actions while in a certain state. Another policy (epsilon-greedy for example) uses that policy and makes decisions.
+
 ---
 
 @snap 
 Policy Iteration
 @snapend
+
++++
+This algorithm re-define the policy at each step and compute the value according to this new policy until the policy converges.
+
+Policy iteration runs an loop between policy evaluation and policy improvement.
++++
+![Policy Iteration](assets/images/policy_iteration.png)
+
++++?image=assets/images/policy_iteration_algorithm.png&size=auto 70%
 ---
 
 @snap 
 Value Iteration
 @snapend
+
++++
+Value iteration computes the optimal state value function by iteratively improving the estimate of V(s). The algorithm initialize `\(V(s)\)` to arbitrary random values. It repeatedly updates the `\(Q(s, a)\)` and `\(V(s)\)` values until they converges. Value iteration is guaranteed to converge to the optimal values.
+
++++?image=assets/images/value_iteration.png&size=auto 30%
+
++++?image=assets/images/value_iteration_algorithm.png&size=auto 70%
+
 ---
 
 @snap
