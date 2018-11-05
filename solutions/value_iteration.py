@@ -65,7 +65,7 @@ def value_iteration(env, gamma = 1.0):
     for i in range(max_iterations):
         prev_v = np.copy(v)
         for s in range(env.observation_space.n):
-            q_sa = [sum([p*(r + prev_v[s_]) for p, s_, r, _ in env.env.P[s][a]]) for a in range(env.action_space.n)] 
+            q_sa = [sum([p*(r + gamma * prev_v[s_]) for p, s_, r, _ in env.env.P[s][a]]) for a in range(env.action_space.n)] 
             v[s] = max(q_sa)
         if (np.sum(np.fabs(prev_v - v)) <= eps):
             print ('Value-iteration converged at iteration# %d.' %(i+1))
