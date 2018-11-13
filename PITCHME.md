@@ -3,6 +3,66 @@
 @size[2.3em](RL Course)
 @snapend
 ---
+
+@snap
+Basic Concepts
+@snapend
+
++++
+
+@snap[north-west]
+Agent
+@snapend
+
+@snap[west mario]
+![Agent](assets/images/mario_2.png)
+@snapend
+
+@snap[east text-right p20 justify]
+It represents the RL algorithm. The environment starts by sending a state to the agent, which then based on its knowledge to take an action in response to that state. The agent will update its knowledge with the reward returned by the environment to evaluate its last action.
+@snapend
+
++++
+@snap[north-west]
+Environment
+@snapend
+
+@snap[west world]
+![World](assets/images/earth.png)
+@snapend
+
+@snap[east text-right p20 justify]
+The environment its task is to define a world where an agent is able to interact with. It therefore has a basic loop that can be written like this:
+
+Produce state s and reward r where our state s represents the current situation in the environment and the reward r represents the scalar value being returned by the environment after selecting an action a.
+@snapend
+
++++
+@snap[north-west]
+Reward
+@snapend
+
+@snap[west reward]
+![Reward](assets/images/reward.png)
+@snapend
+
+@snap[east text-right p20 justify]
+Here the term “reward” is an abstract concept that describes feedback from the environment. A reward can be positive or negative. When the reward is positive, it is corresponding to our normal meaning of reward. When the reward is low or even negative, it is corresponding to what we usually call “punishment.”
+@snapend
+
++++
+@snap
+![RL diagram](assets/images/rl-diagram.jpg)
+@snapend
+
+@snap[p20 justify rl-diagram]
+The main characters of RL are the agent and the environment. The environment is the world that the agent lives in and interacts with. At every step of interaction, the agent sees a (possibly partial) observation of the state of the world, and then decides on an action to take. The environment changes when the agent acts on it, but may also change on its own.
+
+The agent also perceives a reward signal from the environment, a number that tells it how good or bad the current world state is. The goal of the agent is to maximize its cumulative reward, called return. Reinforcement learning methods are ways that the agent can learn behaviours to achieve its goal.
+@snapend
+
+---
+
 @snap
 Markov Decision Process
 @snapend
@@ -47,7 +107,7 @@ Policy
 State Value Function
 @snapend
 <br></br>
-@snap[] 
+@snap 
 
 `\(V_π(s)\)` expresses the expected value of following policy `\(π\)` forever when the agent starts following it from state `\(s\)`.
 <br></br>
@@ -74,18 +134,7 @@ Action Value Function
 
 @snapend
 
-+++
 
-@snap[north-west] 
-Bellman Expectation Equation
-<br></br>
-`\(Q_π(s, a) = E_π[R_{t+1} + \gamma q_π(S_{t+1}, A_{t+1}) | S_t = s, A_t = a] \)`
-<br></br>
-
-`\(V_π(s) = E_π[R_{t+1} + \gamma V_π(S_{t+1}) | S_t = s] \)`
-<br></br>
-
-@snapend
 +++
 
 @ol[list-bullets-black](false)
@@ -96,6 +145,26 @@ to all other policies, `\(π_* ≥ π, ∀π\)`
 - All optimal policies achieve the optimal action-value function, `\(q_{π_∗}(s, a) = q_∗(s, a)\)`
 
 @olend
+---
+
+@snap 
+Bellman Equation
+@snapend
+
++++
+@snap[north-west] 
+Bellman Expectation Equation
+@snapend
+<br></br>
+
+@snap
+`\(Q_π(s, a) = E_π[R_{t+1} + \gamma q_π(S_{t+1}, A_{t+1}) | S_t = s, A_t = a] \)`
+<br></br>
+
+`\(V_π(s) = E_π[R_{t+1} + \gamma V_π(S_{t+1}) | S_t = s] \)`
+<br></br>
+
+@snapend
 ---
 
 @snap 

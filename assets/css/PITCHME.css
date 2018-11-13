@@ -1,0 +1,37 @@
+.p20 {
+	padding: 20%;
+}
+
+.text-right {
+	display:inline-block;
+	width: 50%;
+	margin: 0;
+	padding: 0;
+}
+
+.mario {
+	margin: 2em;
+	width: 30%;
+}
+
+.world {
+	margin: 2em;
+	width: 30%;
+}
+
+.reward {
+	margin: 2em;
+	width: 30%;
+}
+
+.p20.justify.rl-diagram {
+	font-size:0.6em;
+}
+
+.justify {
+	text-align: justify;
+}
+
+.p20.justify {
+	font-size: 0.7em;
+}
