@@ -95,12 +95,8 @@ Policy
 
 `\(π[a|s] = P[A_t = a | s_t = s] \)`
 
-+++
++++?image=assets/images/policy.png&size=auto 70%
 
-@snap[]
-![Policy](assets/images/policy.png)
-
-@snapend
 +++
 
 @snap 
@@ -114,12 +110,7 @@ State Value Function
 `\(V_π(s) = E_π[G_t | S_t = s] \)`
 
 @snapend
-+++
-
-@snap
-![Value Function](assets/images/value.png)
-
-@snapend
++++?image=assets/images/value.png&size=auto 70%
  
 +++
 @snap 
